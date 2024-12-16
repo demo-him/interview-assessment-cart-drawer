@@ -1,0 +1,294 @@
+:root {
+  --primary-color-light: rgb(133, 133, 133);
+  --primary-color-medium: rgb(69, 69, 69);
+  --primary-color-dark: black;
+
+  --text-xs: 14px;
+  --text-sm: 16px;
+  --text-md: 18px;
+  --text-lg: 24px;
+  --text-xl: 32px;
+
+  --size-xs: 4px;
+  --size-sm: 8px;
+  --size-md: 12px;
+  --size-lg: 16px;
+  --size-xl: 24px;
+  --size-2xl: 32px;
+  --size-3xl: 40px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: cabin, sans-serif;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.btn {
+  padding: var(--size-lg) var(--size-2xl);
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(35, 35, 35);
+  color: white;
+  font-weight: bold;
+  font-size: var(--size-lg);
+  cursor: pointer;
+}
+
+.backdrop {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(100, 100, 100, 0.8);
+  display: flex;
+  justify-content: flex-end;
+  overflow-y: hidden;
+  display: none;
+}
+
+.cart-drawer {
+  width: 600px;
+  height: 100%;
+  background-color: white;
+  padding: var(--size-lg) 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-header {
+  padding: 12px 24px;
+  border-bottom: 1px solid rgb(207, 207, 207);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.close-btn {
+  height: 40px;
+  aspect-ratio: 1/1;
+  color: var(--primary-color-light);
+  font-size: var(--text-md);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 300ms ease-in-out;
+}
+
+.close-btn:hover {
+  background-color: rgb(233, 233, 233);
+}
+
+.step {
+  height: 35px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 2px solid rgb(103, 103, 103);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--text-lg);
+  font-weight: bolder;
+}
+
+.progress-bar {
+  flex-grow: 1;
+  height: 10px;
+  background-color: rgb(236, 236, 236);
+  border-radius: 20px;
+}
+
+#step-2-progress {
+  height: 100%;
+  width: 0;
+  background-color: black;
+  border-radius: 20px;
+}
+
+#step-3-progress {
+  height: 100%;
+  width: 0;
+  background-color: black;
+  border-radius: 20px;
+}
+
+.cart-item-card {
+  display: flex;
+  height: 160px;
+}
+
+.cart-item-card > img {
+  height: 100%;
+  aspect-ratio: 4/5;
+}
+
+.qty-box {
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 8px 16px;
+  display: flex;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.coupon-input {
+  padding: 16px;
+  border: 1px solid rgb(202, 202, 202);
+  border-radius: 5px;
+  flex-grow: 1;
+  background-color: rgb(249, 249, 249);
+}
+
+/* Widths */
+.w-full {
+  width: 100%;
+}
+
+/* Display- Flex */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.flex-1 {
+  flex-grow: 1;
+}
+
+.gap-xs {
+  gap: var(--size-xs);
+}
+.gap-md {
+  gap: var(--size-md);
+}
+.gap-lg {
+  gap: var(--size-lg);
+}
+.gap-2xl {
+  gap: var(--size-2xl);
+}
+
+/* Overflow */
+
+.overflow-auto {
+  overflow: auto;
+}
+
+/* Padding */
+
+.p-xs {
+  padding: var(--size-xs);
+}
+.p-sm {
+  padding: var(--size-sm);
+}
+.p-md {
+  padding: var(--size-md);
+}
+.p-lg {
+  padding: var(--size-lg);
+}
+.p-xl {
+  padding: var(--size-xl);
+}
+.p-2xl {
+  padding: var(--size-2xl);
+}
+.p-3xl {
+  padding: var(--size-3xl);
+}
+.px-lg {
+  padding: 0 var(--size-lg);
+}
+.py-lg {
+  padding: var(--size-lg) 0;
+}
+.py-3xl {
+  padding: var(--size-3xl) 0;
+}
+
+/* Text Sizes */
+.text-xs {
+  font-size: var(--text-xs);
+}
+.text-sm {
+  font-size: var(--text-sm);
+}
+.text-md {
+  font-size: var(--text-md);
+}
+.text-lg {
+  font-size: var(--text-lg);
+}
+.text-xl {
+  font-size: var(--text-xl);
+}
+
+/* Text Colors */
+
+.text-primary-light {
+  color: var(--primary-color-light);
+}
+
+.text-primary-medium {
+  color: var(--primary-color-medium);
+}
+
+.text-primary-dark {
+  color: var(--primary-color-dark);
+}
+
+/* Font Weights */
+
+.font-bold {
+  font-weight: bold;
+}
+
+/* Shadow */
+
+.shadow {
+  box-shadow: 0px -5px 8px #e4e4e4;
+}
+
+.border-bottom {
+  border-bottom: 1px solid rgb(209, 209, 209);
+}
+
+.no-wrap {
+  text-wrap: nowrap;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

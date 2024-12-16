@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <button type="button" class="btn" onclick="handleOpenCart()">
+        Open Cart
+      </button>
+
+      <div class="backdrop">
+        <div class="cart-drawer">
+          <!-- Cart header -->
+          <div class="cart-header">
+            <div class="text-xl font-bold">YOUR BAG</div>
+
+            <div class="flex gap-md items-center">
+              <div class="text-lg">
+                <span id="cart-item-count">0</span> Items
+                <span class="text-primary-light"> | </span>
+                <span class="font-bold" id="cart-total"> Rs 0 /- </span>
+              </div>
+
+              <div onclick="handleCloseCart()" class="close-btn">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-2xl flex-1 flex-col overflow-auto">
+            <!-- Shipping Bar -->
+            <div class="flex-col gap-lg">
+              <div class="flex gap-md items-center px-lg">
+                <div class="step">1</div>
+                <div class="progress-bar"><div id="step-2-progress"></div></div>
+                <div class="step">2</div>
+                <div class="progress-bar"><div id="step-3-progress"></div></div>
+                <div class="step">3</div>
+              </div>
+
+              <div class="flex justify-between items-center">
+                <div class="flex-col items-center gap-xs text-sm">
+                  <div>Free Shipping</div>
+                  <div>Above Rs 1000</div>
+                </div>
+                <div class="flex-col items-center gap-1 text-sm">
+                  <div>10% Discount</div>
+                  <div>Above Rs 2000</div>
+                </div>
+                <div class="flex-col items-center gap-1 text-sm">
+                  <div>20% Discount</div>
+                  <div>Above Rs 4000</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cart Items -->
+
+            <div
+              id="cart-item-list"
+              class="flex-1 flex-col gap-2xl py-3xl border-bottom overflow-auto"
+            ></div>
+
+            <div class="flex gap-2xl items-center py-lg">
+              <input
+                class="coupon-input"
+                type="text"
+                placeholder="Apply Your Coupons"
+              />
+
+              <button type="button" class="btn">Apply</button>
+            </div>
+          </div>
+
+          <div class="flex-col gap-lg p-2xl shadow">
+            <div class="flex justify-between text-lg text-primary-light">
+              <div>Discount on MRP</div>
+              <div>Rs <span id="footer-discount"> 0 </span> /-</div>
+            </div>
+            <div class="flex justify-between text-lg text-primary font-bold">
+              <div>Total</div>
+              <div>Rs <span id="footer-total"> 0 </span> /-</div>
+            </div>
+            <div>
+              <button class="btn w-full">CHECKOUT</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
